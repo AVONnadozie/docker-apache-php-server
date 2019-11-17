@@ -1,4 +1,4 @@
-# docker-apache-php-server
+# docker-apache-laravel-server
 Apache + PHP 7.3 server configured for Laravel running inside a Docker container.
 
 ## Laravel Application Quick Run
@@ -18,11 +18,11 @@ $ docker run -d -p 5000:80 --name=my-laravel-name -v $PWD:/var/www avonnadozie/a
 
 - `WEBROOT` – Path to the web root. Default: `/var/www`
 - `WEBROOT_PUBLIC` – Path to the web root. Default: `/var/www/public`
-- `CRON_FILE` - Path to cron file. Path should be an absolute path eg. `/var/www/deploy/cron.txt` or relative to `WEBROOT` eg. `deploy/cron.txt`
 - `PHP_MEMORY_LIMIT` - PHP memory limit. Default: `128M`
 - `PHP_POST_MAX_SIZE` - Maximum POST size. Default: `50M`
 - `PHP_UPLOAD_MAX_FILESIZE` - Maximum file upload file. Default: `10M`.
-- `STARTUP_SCRIPT` - Script to run after container starts
+- `STARTUP_SCRIPT` - Optional script to run after container starts. Path should be an absolute path eg. `/var/www/deploy/start.sh` or relative to `WEBROOT` eg. `deploy/start.sh`
+- `CRON_FILE` - Optional path to a cron file, content of file will be copied to crontab. Path should be an absolute path eg. `/var/www/deploy/cron.txt` or relative to `WEBROOT` eg. `deploy/cron.txt`
 - `PRODUCTION` – Application environment: 1 = Production, 0 = Development. Default: `0`
 
 ## Additional Packages Installed
