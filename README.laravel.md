@@ -1,0 +1,78 @@
+# docker-apache-php-server
+Apache + PHP 7.3 server configured for Laravel running inside a Docker container.
+
+## PHP Application Quick Run
+
+You can get up and running with a PHP application inside Docker in minutes.
+
+- Run the command on your project root to start a docker container and attach the application. 
+```
+$ docker run -d -p 5000:80 --name=my-app-name -v $PWD:/var/www/html avonnadozie/apache-laravel-server
+```
+
+## Arguments
+
+- `UID` - ID of user. Default 9000, Name: `devuser`, Group: `devuser`
+
+## Environment Variables
+
+- `WEBROOT` – Path to the web root. Default: `/var/www`
+- `WEBROOT_PUBLIC` – Path to the web root. Default: `/var/www/html`
+- `CRON_FILE` - Path to cron file. Path should be an absolute path eg. `/var/www/deploy/cron.txt` or relative to `WEBROOT` eg. `deploy/cron.txt`
+- `PHP_MEMORY_LIMIT` - PHP memory limit. Default: `128M`
+- `PHP_POST_MAX_SIZE` - Maximum POST size. Default: `50M`
+- `PHP_UPLOAD_MAX_FILESIZE` - Maximum file upload file. Default: `10M`.
+- `STARTUP_SCRIPT` - Script to run after container starts
+- `PRODUCTION` – Application environment: 1 = Production, 0 = Development. Default: `0`
+
+## Additional Packages Installed
+git |
+zip |
+cron |
+unzip |
+composer |
+sendmail |
+g++
+
+## PHP Modules Active
+bcmath |
+bz2 |
+calendar |
+Core |
+ctype |
+curl |
+date |
+dom |
+fileinfo |
+filter |
+ftp |
+gd |
+hash |
+iconv |
+intl |
+json |
+libxml |
+mbstring |
+mysqlnd |
+openssl |
+pcre |
+PDO |
+pdo_mysql |
+pdo_sqlite |
+Phar |
+posix |
+readline |
+Reflection |
+session |
+SimpleXML |
+sodium |
+SPL |
+sqlite3 |
+standard |
+tokenizer |
+xml |
+xmlreader |
+xmlwriter |
+Zend OPcache |
+zip |
+zlib |
