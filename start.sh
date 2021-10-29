@@ -1,12 +1,15 @@
 #!/bin/bash
 
-cd ${WEBROOT}
-
 # UPDATE THE WEBROOT IF REQUIRED.
 if [[ ! -z "${WEBROOT_PUBLIC}" ]]; then
     sed -ri -e 's!/var/www/html!${WEBROOT_PUBLIC}!g' /etc/apache2/sites-available/*.conf
     sed -ri -e 's!/var/www/!${WEBROOT_PUBLIC}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+else
+    export WEBROOT=/var/www
+    export WEBROOT_PUBLIC=/var/www/html
 fi
+
+cd ${WEBROOT}
 
 # Setup cron file
 if [[ ! -z "${CRON_FILE}" ]]; then

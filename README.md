@@ -1,5 +1,5 @@
 # docker-apache-php-server
-LAMP server (PHP 7.3) running inside a Docker container.
+LAMP server running inside a Docker container.
 
 ## PHP Application Quick Run
 
